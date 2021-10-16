@@ -1,0 +1,41 @@
+Enter rock, paper, or scissors: rock
+The computer chose rock, and you chose rock.
+Its a tie. Starting over.
+
+
+Enter rock, paper, or scissors: paper
+The computer chose rock, and you chose paper.
+You score a point.
+
+Enter rock, paper, or scissors: scissors
+The computer chose rock, and you chose scissors.
+The computer scores a point.
+
+Enter rock, paper, or scissors: glue
+You made an invalid user_choice. Please try again.
+Enter rock, paper, or scissors: rock
+The computer chose rock, and you chose rock.
+Its a tie. Starting over.
+
+
+Enter rock, paper, or scissors: paper
+The computer chose paper, and you chose paper.
+Its a tie. Starting over.
+
+
+Enter rock, paper, or scissors: scissors
+The computer chose rock, and you chose scissors.
+The computer scores a point.
+
+Enter rock, paper, or scissors: rock
+The computer chose scissors, and you chose rock.
+You score a point.
+
+Enter rock, paper, or scissors: paper
+The computer chose rock, and you chose paper.
+You score a point.
+
+Player's score: 2
+Computer's score: 1
+
+Congratulations! You have won the game.
