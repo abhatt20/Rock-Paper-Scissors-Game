@@ -1,0 +1,50 @@
+Enter rock, paper, or scissors: paper
+The computer chose scissors, and you chose paper.
+The computer scores a point.
+
+Enter rock, paper, or scissors: paper
+The computer chose rock, and you chose paper.
+You score a point.
+
+Enter rock, paper, or scissors: rock
+The computer chose paper, and you chose rock.
+The computer scores a point.
+
+Player's score: 1
+Computer's score: 2
+
+Sorry! You have lost the game.
+
+Want to try again ? Y N
+Response: Y
+
+Enter rock, paper, or scissors: rock
+The computer chose paper, and you chose rock.
+The computer scores a point.
+
+Enter rock, paper, or scissors: paper
+The computer chose paper, and you chose paper.
+Its a tie. Starting over.
+
+
+Enter rock, paper, or scissors: paper
+The computer chose scissors, and you chose paper.
+The computer scores a point.
+
+Enter rock, paper, or scissors: scissors
+The computer chose paper, and you chose scissors.
+You score a point.
+
+Enter rock, paper, or scissors: scissors
+The computer chose rock, and you chose scissors.
+The computer scores a point.
+
+Player's score: 1
+Computer's score: 2
+
+Sorry! You have lost the game.
+
+Want to try again ? Y N
+Response: N
+
+Thanks for playing the game! Hope you enjoyed it.
