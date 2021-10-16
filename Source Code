@@ -1,0 +1,244 @@
+# Date: 10/26/20
+# Author: Aryan Bhatt
+# This program lets the user play a game of Rock, Paper and Scissors
+# against the computer. Both the players are given 3 chances to make their choices.
+
+
+# Import the random module.
+import random
+
+# Import the system module.
+import sys
+
+# Thus function accepts a valid input from the user.
+def get_valid_input():
+
+    # Ask the user to enter an input.
+    user_choice = input("\nEnter rock, paper, or scissors: ")
+  
+    # Use a while loop to make the user enter an input again and again
+    # until a valid one is entered.
+    while ((user_choice != "rock") and (user_choice != "paper") and
+           (user_choice != "scissors")):
+
+        # Display an error message.
+        print("You made an invalid user_choice. Please try again.")
+
+        # Update the loop control statement.
+        user_choice = input("Enter rock, paper, or scissors: ")
+
+    return user_choice
+
+
+
+# This function displays the objects chosen by both the players.
+def display_choices(computer_turn, user_turn):
+
+    # Display the computer and user's choice.
+    print("The computer chose",computer_turn + ", and you chose",user_turn,sep=' ',end='.')
+
+
+
+# This function is responsible for starting the game.
+def main():
+
+    # Create a list.
+    tools = ["rock","paper","scissors"]
+
+    # Initialize the loop control variable.
+    number_of_rounds = 0
+
+    # Set the computer and player's score to 0.
+    computer_score = 0
+    player_score = 0
+
+    # Use a nested while-for loop to give both players 3 turns to choose something and then test the various combinations of their choices to see who scores a point.
+
+    
+    # Use a while loop to play this game across multiple rounds.
+    while number_of_rounds < 3:
+
+        # Use the choice function from the random module to choose a random value from the list.
+        computer_choice = random.choice(tools)
+
+        # Call the get_valid_input() function to get a valid user input.
+        user_inp = get_valid_input()
+
+        # Call the display_choices function to display the choices of both the players.
+        display_choices(computer_choice, user_inp)
+
+
+        # Use a for loop to check for different combinations of
+        # the user and computer's choice.
+        for t in tools:
+
+            # Check whether the user entered rock as a choice.
+            if user_inp == "rock":
+
+                # Use an if and multiple elif statements to match the
+                # computer's choice with each element in the list.
+
+                
+                if computer_choice == tools[0]:
+
+                    # Display the respective message.
+                    print("\nIts a tie. Starting over.")
+
+                    # Update the global boolean variable.
+                    rerun = True
+
+                    # Display a blank line.
+                    print()
+
+                    # Call the main function.
+                    main()
+                    
+        
+                elif computer_choice == tools[1]:
+
+                    # Display the respective function.
+                    print("\nThe computer scores a point.")
+
+                    # Give 1 point to the computer.
+                    computer_score += 1
+                    
+                    # Exit from the for loop.
+                    break
+
+                elif computer_choice == tools[2]:
+
+                    # Display the respective message.
+                    print("\nYou score a point.")
+
+                    # Give 1 point to the player.
+                    player_score += 1
+                    
+                    # Exit from the for loop.
+                    break
+
+            # Check whether the user entered paper as a choice.
+            elif user_inp == "paper":
+
+                # Use an if and multiple elif statements to match the
+                # computer's choice with each element in the list.
+
+                
+                if computer_choice == tools[0]:
+
+                    # Display the respective message.
+                    print("\nYou score a point.")
+
+                    # Give 1 point to the player.
+                    player_score += 1
+                    
+                    # Exit from the for loop.
+                    break
+                
+
+                elif computer_choice == tools[1]:
+
+                    # Display the respective message.
+                    print("\nIts a tie. Starting over.")
+
+                    # Update the global boolean variable.
+                    rerun = True
+
+                    # Display a blank line.
+                    print()
+
+                    # Call the main function.
+                    main()
+
+                elif computer_choice == tools[2]:
+
+                    # Display the respective message.
+                    print("\nThe computer scores a point.")
+
+                    # Give 1 point to the computer.
+                    computer_score += 1
+
+                    # Exit from the for loop.
+                    break
+
+            # Check whether the user entered scissors as a choice.
+            elif user_inp == "scissors":
+
+                # Use an if and multiple elif statements to match the
+                # computer's choice with each element in the list.
+
+                if computer_choice == tools[0]:
+
+                    # Display the respective message.
+                    print("\nThe computer scores a point.")
+
+                    # Give 1 point to the computer.
+                    computer_score += 1
+
+                    # Exit from the for loop.
+                    break
+
+                elif computer_choice == tools[1]:
+
+                    # Display the respective message.
+                    print("\nYou score a point.")
+
+                    # Give 1 point to the player.
+                    player_score += 1
+                    
+                    # Exit from the for loop.
+                    break
+
+                elif computer_choice == tools[2]:
+
+                    # Display the respective message.
+                    print("\nIts a tie. Starting over.")
+
+                    # Update the global boolean variable.
+                    rerun = True
+
+                    # Display a blank line.
+                    print()
+
+                    # Call the main function.
+                    main()
+
+        # Update the loop-control variable.
+        number_of_rounds = number_of_rounds + 1
+
+
+    # Display the player and computer's score on the screen after the game is finished.
+    print("\nPlayer's score:",player_score,sep = ' ')
+    print("Computer's score:",computer_score,sep = ' ')
+
+
+    # Use an if-else construct to decide whether the player wins or loses the game.
+    if player_score > computer_score:
+
+        # Display the respective message.
+        print("\nCongratulations! You have won the game.")
+
+        # Exit the game.
+        sys.exit()
+
+    else:
+
+        # Display the respective message.
+        print("\nSorry! You have lost the game.\n")
+
+        # Ask the player whether they want to play the game again or not.
+        print("Want to try again ? Y N")
+
+        # Accept the player's response.
+        ans = input("Response: ")
+
+
+        # Use an if-else construct to either restart or exit the game.
+        if ans == "Y":
+           main()
+
+        else:
+           print("\nThanks for playing the game! Hope you enjoyed it.")
+           sys.exit()
+
+# Call the main function.         
+main()
